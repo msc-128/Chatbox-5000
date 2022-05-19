@@ -1,14 +1,22 @@
 from Titles import printTitle
 from Chatbotwiki import wiki
+from Calculator import calc
 print("Welcome to")
 printTitle()
-print("------------------------\nMenu:\n1 - Wikipedia Lookup\n2 - Favorite Sites\n3 - Stop")
+print("┌────────────────────────────────────┐")
+print("│{:^36}│".format("Menu:"))
+print("├────────────────────────────────────┤")
+print("│{:^36}│".format("1 - Wikipedia Lookup"))
+print("│{:^36}│".format("2 - Favorite Sites"))
+print("│{:^36}│".format("3 - Calculator"))
+print("│{:^36}│".format("4 - Stop"))
+print("└────────────────────────────────────┘")
 while True:
-  firstInput = input("> ")
-  if firstInput == "1":
+  menu = input("type the number correlated with your desired request: ")
+  if menu == "1":
     wiki()
     continue
-  elif firstInput == "2":
+  if menu == "2":
     f = open("madLibFile.txt", "r")
     print(f.read())
     print("Do you want to edit your favorite sites?")
@@ -29,8 +37,9 @@ while True:
     f.close()
     f = open("madLibFile.txt", "r")
     print(f.read())
-
-  elif firstInput == "3":
+  elif menu == "3":
+    calc()
+  elif menu == "4":
     break
   else:
     continue
