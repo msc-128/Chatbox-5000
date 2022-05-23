@@ -12,8 +12,9 @@ while True:
     soup = BeautifulSoup(r.content, 'html.parser')
     tags = soup.find_all('p')
     topic2 = topic.replace("_", " ")
+    topic3 = topic2.split()
     for tag in tags:
-        if topic2 in tag.text:
+        if topic3[-1] in tag.text:
             #print(tag.text)
             break
     txt = tag.text
